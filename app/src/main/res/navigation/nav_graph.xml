@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/inicioFragment">
+
+    <fragment
+        android:id="@+id/inicioFragment"
+        android:name="com.natansin.notasmvvm.fragments.InicioFragment"
+        android:label="Nota"
+        tools:layout="@layout/fragment_inicio" >
+        <action
+            android:id="@+id/action_inicioFragment_to_novaNotaFragment"
+            app:destination="@id/novaNotaFragment"
+
+            />
+        <action
+            android:id="@+id/action_inicioFragment_to_atualizaNotaFragment"
+            app:destination="@id/atualizaNotaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/novaNotaFragment"
+        android:name="com.natansin.notasmvvm.fragments.NovaNotaFragment"
+        android:label="Nova Nota"
+        tools:layout="@layout/fragment_nova_nota" >
+        <action
+            android:id="@+id/action_novaNotaFragment_to_inicioFragment"
+            app:destination="@id/inicioFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/atualizaNotaFragment"
+        android:name="com.natansin.notasmvvm.fragments.AtualizaNotaFragment"
+        android:label="Atualiza Nota"
+        tools:layout="@layout/fragment_atualiza_nota" >
+        <action
+            android:id="@+id/action_atualizaNotaFragment_to_inicioFragment"
+            app:destination="@id/inicioFragment" />
+
+    </fragment>
+</navigation>
